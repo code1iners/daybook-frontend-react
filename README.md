@@ -16,29 +16,6 @@ Simple Daybook Frontend Web Application powered by React.
     - node (v16.16.0)
     - npm (v8.14.0)
 
-## Services
-
-    - Authenticate
-        - [ ] Sign up.
-        - [ ] Sign in.
-        - [ ] Sign out.
-
-    - Diary
-        - [ ] List.
-        - [ ] Retrieve.
-        - [ ] Write.
-        - [ ] Update.
-        - [ ] Delete.
-
-    - Dark mode
-    - Form validation
-    - Animation
-
-## App Providers
-
-    - Codeliner
-    - Lee_code
-
 ## How to project setup
 
 ```bash
@@ -51,3 +28,29 @@ npm run dev
 # Build app as production mode.
 npm run build
 ```
+
+## App Providers
+
+    - Codeliner
+    - Lee_code
+
+## Services
+
+- Authenticate
+
+  - [ ] Sign up.
+  - [ ] Sign in.
+  - [ ] Sign out.
+
+- Diary
+
+  - [ ] List.
+  - [ ] Retrieve.
+  - [ ] Write.
+  - [ ] Update.
+  - [ ] Delete.
+
+- Others
+  - [ ] Dark mode
+  - [ ] Form validation
+  - [ ] Animation
