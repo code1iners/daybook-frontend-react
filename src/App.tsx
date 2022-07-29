@@ -1,5 +1,9 @@
+import { useRecoilValue } from "recoil";
+import { helloAtom } from "./stores";
+
 function App() {
-  return <div>App</div>;
+  const helloAtomValue = useRecoilValue(helloAtom);
+  return <div>{helloAtomValue}</div>;
 }
 
 export default App;

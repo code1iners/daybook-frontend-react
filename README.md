@@ -8,6 +8,7 @@ Simple Daybook Frontend Web Application powered by React.
     - React
     - TypeScript
     - Tailwind CSS
+    - Recoil
 
 ## App Created Environment
 
@@ -28,6 +29,10 @@ Simple Daybook Frontend Web Application powered by React.
         - [ ] Write.
         - [ ] Update.
         - [ ] Delete.
+
+    - Dark mode
+    - Form validation
+    - Animation
 
 ## App Providers
 
