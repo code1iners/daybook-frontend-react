@@ -45,7 +45,7 @@ npm run build
 - Diary
 
   - [ ] List.
-  - [ ] Retrieve.
+  - [ ] Detail.
   - [ ] Write.
   - [ ] Update.
   - [ ] Delete.
