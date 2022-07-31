@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import AuthProvider from "@/components/auth/auth-provider";
+import AuthRequired from "@/features/auth/components/auth-required";
 import {
   rootPath,
   authRoutes,
@@ -16,7 +16,14 @@ function App() {
   return (
     <Routes>
       {/* Root */}
-      <Route path={rootPath} element={<Home />}></Route>
+      <Route
+        path={rootPath}
+        element={
+          <AuthRequired>
+            <Home />
+          </AuthRequired>
+        }
+      ></Route>
 
       {/* Authenticate */}
       <Route path={authRoutes.login} element={<Login />}></Route>
@@ -25,17 +32,17 @@ function App() {
       <Route
         path={diaryRoutes.diaries}
         element={
-          <AuthProvider>
+          <AuthRequired>
             <DiaryList />
-          </AuthProvider>
+          </AuthRequired>
         }
       ></Route>
       <Route
         path={`${diaryRoutes.diaries}/:id`}
         element={
-          <AuthProvider>
+          <AuthRequired>
             <DiaryDetail />
-          </AuthProvider>
+          </AuthRequired>
         }
       ></Route>
 

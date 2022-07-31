@@ -1,3 +1,4 @@
+// Root
 export const rootPath = "/";
 
 // Authenticate
@@ -10,6 +11,7 @@ export const diaryRoutes = {
   diaries: "/diaries",
 };
 
+// Others
 export const otherRoutes = {
   all: "*",
 };
