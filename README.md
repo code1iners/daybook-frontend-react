@@ -9,6 +9,7 @@ Simple Daybook Frontend Web Application powered by React.
     - TypeScript
     - Tailwind CSS
     - Recoil
+    - React Hook Form
 
 ## App Created Environment
 
