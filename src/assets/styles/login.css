@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap");
+.form-box {
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 100px;
+  width: 370px;
+  display: flex;
+  flex-flow: column nowrap;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 10px 5px 5px gray;
+}
+.form-box > .row {
+  margin: 0;
+  padding: 0;
+}
+.form-box > .row > li {
+  display: flex;
+  flex: column nowrap;
+  margin-bottom: 20px;
+}
+.form-box > .row > li > label {
+  display: block;
+  flex: 0.3;
+  font-family: "Nanum Pen Script", cursive;
+}
+.form-box > .row > li > input {
+  flex: 0.5;
+  border: 1px solid #ccc !important;
+  border-radius: 5px;
+  outline-color: gray;
+  font-size: 8px;
+  padding-left: 5px;
+}
+.button {
+  cursor: pointer;
+  background-color: skyblue !important;
+  color: white;
+  font-size: 14px;
+  border-radius: 5px;
+  font-family: "Nanum Pen Script", cursive;
+}
