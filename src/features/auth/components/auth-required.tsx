@@ -1,7 +1,7 @@
 import { Navigate, useLocation } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { meAtom } from "@/stores/auth";
-import { authRoutes } from "@/constants/routes";
+import { AuthRoutes } from "@/constants/routes";
 
 interface AuthRequiredProps {
   children: JSX.Element;
@@ -11,10 +11,10 @@ export default function AuthRequired({ children }: AuthRequiredProps) {
   const location = useLocation();
   const { isLoggedIn } = useRecoilValue(meAtom);
 
-  if (isLoggedIn) {
+  if (!isLoggedIn) {
     return (
       <Navigate
-        to={authRoutes.login}
+        to={AuthRoutes.Login}
         state={{ from: location.pathname }}
         replace
       />

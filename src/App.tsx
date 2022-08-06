@@ -1,11 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import AuthRequired from "@/features/auth/components/auth-required";
-import {
-  rootPath,
-  authRoutes,
-  diaryRoutes,
-  otherRoutes,
-} from "@/constants/routes";
+import { AuthRoutes, DiaryRoutes, OtherRoutes } from "@/constants/routes";
 import DiaryList from "@/pages/diaries/diary-list";
 import DiaryDetail from "@/pages/diaries/diary-detail";
 import NotFound from "@/pages/errors/not-found";
@@ -17,7 +12,7 @@ function App() {
     <Routes>
       {/* Root */}
       <Route
-        path={rootPath}
+        path={OtherRoutes.Root}
         element={
           <AuthRequired>
             <Home />
@@ -26,11 +21,11 @@ function App() {
       ></Route>
 
       {/* Authenticate */}
-      <Route path={authRoutes.login} element={<Login />}></Route>
+      <Route path={AuthRoutes.Login} element={<Login />}></Route>
 
       {/* Diary */}
       <Route
-        path={diaryRoutes.diaries}
+        path={DiaryRoutes.Diaries}
         element={
           <AuthRequired>
             <DiaryList />
@@ -38,7 +33,7 @@ function App() {
         }
       ></Route>
       <Route
-        path={`${diaryRoutes.diaries}/:id`}
+        path={`${DiaryRoutes.Diaries}/:id`}
         element={
           <AuthRequired>
             <DiaryDetail />
@@ -47,7 +42,7 @@ function App() {
       ></Route>
 
       {/* All */}
-      <Route path={otherRoutes.all} element={<NotFound />}></Route>
+      <Route path={OtherRoutes.All} element={<NotFound />}></Route>
     </Routes>
   );
 }

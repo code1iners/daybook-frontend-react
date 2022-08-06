@@ -4,7 +4,7 @@ import { atom } from "recoil";
 export const meAtom = atom<MeType>({
   key: "meAtom",
   default: {
-    isLoggedIn: false,
+    isLoggedIn: true,
     accessToken: undefined,
   },
 });

@@ -1,3 +1,9 @@
+import {
+  AuthRoutes,
+  DiaryRoutes,
+  OtherRoutes,
+  UserRoutes,
+} from "@/constants/routes";
 import { Link } from "react-router-dom";
 
 export default function MainHeader() {
@@ -6,7 +12,7 @@ export default function MainHeader() {
       <nav className="h-full">
         <ul className="h-full flex items-center justify-center gap-5">
           <li>
-            <Link to={"/"}>
+            <Link to={OtherRoutes.Root}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -18,13 +24,16 @@ export default function MainHeader() {
             </Link>
           </li>
           <li>
-            <Link to={"/diaries"}>Diary</Link>
+            <Link to={DiaryRoutes.Diaries}>diary</Link>
           </li>
           <li>
-            <Link to={"/me"}>Me</Link>
+            <Link to={AuthRoutes.Login}>login</Link>
           </li>
           <li>
-            <Link to={"/settings"}>Settings</Link>
+            <Link to={UserRoutes.Me}>me</Link>
+          </li>
+          <li>
+            <Link to={OtherRoutes.Settings}>settings</Link>
           </li>
         </ul>
       </nav>

@@ -9,7 +9,7 @@
   .h-header li {
     @apply h-full;
   }
-  .h-header a {
-    @apply cursor-pointer transition-all opacity-90 hover:opacity-100 hover:font-normal min-w-[50px] h-full flex items-center justify-center;
+  .h-header li a {
+    @apply cursor-pointer transition-all opacity-90 hover:opacity-100 hover:font-normal min-w-[50px] h-full flex items-center justify-center capitalize;
   }
 }

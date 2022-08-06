@@ -1,17 +1,20 @@
-// Root
-export const rootPath = "/";
-
 // Authenticate
-export const authRoutes = {
-  login: "/login",
-};
+export enum AuthRoutes {
+  Login = "/login",
+}
 
 // Diary.
-export const diaryRoutes = {
-  diaries: "/diaries",
-};
+export enum DiaryRoutes {
+  Diaries = "/diaries",
+}
 
 // Others
-export const otherRoutes = {
-  all: "*",
-};
+export enum OtherRoutes {
+  Root = "/",
+  Settings = "/settings",
+  All = "*",
+}
+
+export enum UserRoutes {
+  Me = "/me",
+}
