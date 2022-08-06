@@ -19,7 +19,7 @@ export default function DiaryItem({ year, month, day }: DiaryItemProps) {
       key={day}
       onClick={onDiaryClick}
     >
-      <div className="border-b px-2 py-1">{day + 1}</div>
+      <div className="border-b px-2 py-1">{day}</div>
       <div className="grow flex justify-center items-center">
         {[...Array(count).keys()].map((count, i) => (
           <svg

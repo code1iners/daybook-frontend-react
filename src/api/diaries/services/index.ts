@@ -1,5 +1,6 @@
 import { axiosClient } from "@/api/core/axios";
 import {
+  GetDiariesOutput,
   RetrieveDiaryByDateInput,
   RetrieveDiaryByQueryStringInput,
 } from "@/api/diaries/types";
@@ -10,7 +11,9 @@ import { DiaryRoutes } from "@/constants/routes";
  * [GET /api/v1/diaries] Getting all diary list.
  */
 export const getDiaries = async () => {
-  return axiosClient.get(DiaryRoutes.Diaries).then(({ data }) => data);
+  return axiosClient
+    .get<GetDiariesOutput>(DiaryRoutes.Diaries)
+    .then(({ data }) => data);
 };
 
 /**
