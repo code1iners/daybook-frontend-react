@@ -2,6 +2,10 @@
 
 Simple Daybook Frontend Web Application powered by React.
 
+## Web site links
+
+- [Development](https://codeliners-daybook.netlify.app)
+
 ## Main tech stacks
 
     - Vite
