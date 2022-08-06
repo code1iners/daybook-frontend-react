@@ -1,15 +1,16 @@
 import MainHeader from "@/layouts/main-header";
 import MainBody from "@/layouts/main-body";
+import { clazz } from "@ce1pers/use-class";
 
-interface MainLayou {
+interface MainLayoutProps {
   children: React.ReactNode;
 }
 
-export default function MainLayout({ children }: MainLayou) {
+export default function MainLayout({ children }: MainLayoutProps) {
   return (
-    <div className="min-h-screen flex flex-col justify-between">
+    <div className={clazz("min-h-screen flex flex-col justify-between")}>
       <MainHeader />
-      <MainBody className="grow">{children}</MainBody>
+      <MainBody className="h-main">{children}</MainBody>
     </div>
   );
 }

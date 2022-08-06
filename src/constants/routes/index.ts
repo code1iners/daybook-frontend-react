@@ -1,20 +1,22 @@
 // Authenticate
-export enum AuthRoutes {
-  Login = "/login",
-}
+export const AuthRoutes = {
+  Login: "/login",
+} as const;
 
 // Diary.
-export enum DiaryRoutes {
-  Diaries = "/diaries",
-}
+export const DiaryRoutes = {
+  Diaries: "/diaries",
+  Retrieve: "/diaries/retrieve",
+} as const;
+
+// User
+export const UserRoutes = {
+  Me: "/me",
+} as const;
 
 // Others
-export enum OtherRoutes {
-  Root = "/",
-  Settings = "/settings",
-  All = "*",
-}
-
-export enum UserRoutes {
-  Me = "/me",
-}
+export const OtherRoutes = {
+  Root: "/",
+  Settings: "/settings",
+  All: "*",
+} as const;

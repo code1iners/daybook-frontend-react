@@ -2,12 +2,15 @@ import { Routes, Route } from "react-router-dom";
 import AuthRequired from "@/features/auth/components/auth-required";
 import { AuthRoutes, DiaryRoutes, OtherRoutes } from "@/constants/routes";
 import DiaryList from "@/pages/diaries/diary-list";
-import DiaryDetail from "@/pages/diaries/diary-detail";
+import DiaryRetrieve from "@/pages/diaries/diary-retrieve";
 import NotFound from "@/pages/errors/not-found";
 import Login from "@/pages/auth/login";
 import Home from "@/pages/home";
+import { useScreenSize } from "@/hooks/use-screen-size";
 
 function App() {
+  useScreenSize();
+
   return (
     <Routes>
       {/* Root */}
@@ -33,10 +36,10 @@ function App() {
         }
       ></Route>
       <Route
-        path={`${DiaryRoutes.Diaries}/:id`}
+        path={`${DiaryRoutes.Retrieve}`}
         element={
           <AuthRequired>
-            <DiaryDetail />
+            <DiaryRetrieve />
           </AuthRequired>
         }
       ></Route>
