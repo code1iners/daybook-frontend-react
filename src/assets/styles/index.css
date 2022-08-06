@@ -4,6 +4,12 @@
 
 @layer components {
   .h-header {
-    @apply min-h-[60px];
+    @apply h-11 bg-black text-white text-xs font-thin;
+  }
+  .h-header li {
+    @apply h-full;
+  }
+  .h-header a {
+    @apply cursor-pointer transition-all opacity-90 hover:opacity-100 hover:font-normal min-w-[50px] h-full flex items-center justify-center;
   }
 }
