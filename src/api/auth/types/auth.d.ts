@@ -1,10 +1,10 @@
 import { CoreOutput } from "@/api/core/types/core-output";
 
-export interface CreateUserInput {
+export interface JoinUserInput {
   userEmail: string;
   password: string;
   userName: string;
   birthday: string;
 }
 
-export interface CreateUserOutput extends CoreOutput {}
+export interface JoinUserOutput extends CoreOutput {}

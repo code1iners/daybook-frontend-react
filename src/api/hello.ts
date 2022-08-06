@@ -1,4 +1,6 @@
+import { axiosClient } from "@/api/core/axios";
+
 const SERVER_URL = import.meta.env.VITE_SERVER_URL;
 
 export const hello = async () =>
-  fetch(`${SERVER_URL}/hello`).then((res) => res.json());
+  axiosClient.get(`${SERVER_URL}/hello`).then(({ data }) => data);
