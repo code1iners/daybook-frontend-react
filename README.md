@@ -9,11 +9,12 @@ Simple Daybook Frontend Web Application powered by React.
 ## Main tech stacks
 
     - Vite
-    - React
-    - TypeScript
+    - React / React Router 6
+    - JavaScript / TypeScript
     - Tailwind CSS
     - Recoil
     - React Hook Form
+    - React Query / Axios
 
 ## App Created Environment
 
