@@ -1,7 +1,7 @@
 import { clazz } from "@ce1pers/use-class";
-import { DiaryItemBodyProps } from "@/features/diaries/types";
+import { DiaryNewBodyProps } from "@/features/diaries/types";
 
-export default function DiaryItemBody({
+export default function DiaryNewBody({
   rest,
   inputRef,
   content,
@@ -10,7 +10,7 @@ export default function DiaryItemBody({
   onSubmit,
   refCallBack,
   textLengthIsValid,
-}: DiaryItemBodyProps) {
+}: DiaryNewBodyProps) {
   const hasLength = () => content?.length;
 
   return (

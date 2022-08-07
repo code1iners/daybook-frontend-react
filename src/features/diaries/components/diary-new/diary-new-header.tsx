@@ -1,17 +1,17 @@
 import SexyHorizontalButton from "@/shared/components/sexy-horizontal-button";
-import { DiaryItemHeaderProps } from "@/features/diaries/types";
+import { DiaryNewHeaderProps } from "@/features/diaries/types";
 
-export default function DiaryItemHeader({ onClick }: DiaryItemHeaderProps) {
+export default function DiaryNewHeader({ onClick }: DiaryNewHeaderProps) {
   return (
     <section className="flex justify-between items-center">
       <h1 className="text-2xl font-semibold tracking-widest">New Diary</h1>
 
       <SexyHorizontalButton
-        classNames="border border-primary text-primary px-5"
+        classNames="border border-primary text-primary px-3"
         isFull={false}
         onClick={onClick}
       >
-        <span>New</span>
+        <span className="tracking-wider uppercase text-sm">write</span>
       </SexyHorizontalButton>
     </section>
   );

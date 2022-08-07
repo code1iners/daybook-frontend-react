@@ -33,3 +33,16 @@ export interface CreateDiaryInput extends SimpleDate {
 }
 
 export interface CreateDiaryOutput extends CoreOutput {}
+
+export interface DeleteDiaryInput {
+  diaryId: number;
+}
+
+export interface DeleteDiaryOutput extends CoreOutput {}
+
+export interface EditDiaryInput {
+  diaryId: number;
+  content: string;
+}
+
+export interface EditDiaryOutput extends CoreOutput {}

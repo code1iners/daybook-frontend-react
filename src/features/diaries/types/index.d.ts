@@ -13,7 +13,7 @@ export interface NewDiaryForm {
   content: string;
 }
 
-export interface DiaryItemBodyProps {
+export interface DiaryNewBodyProps {
   onSubmit: () => void;
   refCallBack: RefCallBack;
   rest: Omit<UseFormRegisterReturn, "ref">;
@@ -24,6 +24,6 @@ export interface DiaryItemBodyProps {
   errors: FieldErrorsImpl<DeepRequired<NewDiaryForm>>;
 }
 
-export interface DiaryItemHeaderProps {
+export interface DiaryNewHeaderProps {
   onClick: () => void;
 }

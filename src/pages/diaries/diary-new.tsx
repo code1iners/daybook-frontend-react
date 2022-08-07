@@ -6,8 +6,8 @@ import MainLayout from "@/layouts/main-layout";
 import { createDiary } from "@/api/diaries/services";
 import { SimpleDate } from "@/api/diaries/types";
 import { NewDiaryForm } from "@/features/diaries/types";
-import DiaryItemHeader from "@/features/diaries/components/diary-item/diary-item-header";
-import DiaryItemBody from "@/features/diaries/components/diary-item/diary-item-body";
+import DiaryItemHeader from "@/features/diaries/components/diary-new/diary-new-header";
+import DiaryItemBody from "@/features/diaries/components/diary-new/diary-new-body";
 import { extractTextLength } from "@/shared/libs/useString";
 import {
   dateToQueryString,
