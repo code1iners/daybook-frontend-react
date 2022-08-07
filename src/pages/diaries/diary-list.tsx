@@ -4,6 +4,8 @@ import { DiaryData } from "@/api/diaries/types";
 import DiaryItem from "@/features/diaries/components/diary-item";
 import { useDiaryList } from "@/features/diaries/hooks/useDiary";
 import DiaryListHeader from "@/features/diaries/components/diary-list-header";
+import SimpleLoadingText from "@/shared/components/simple-loading-text";
+import SimpleErrorText from "@/shared/components/simple-error-text";
 
 export default function DiaryList() {
   // Need previous, next month data api.
@@ -21,9 +23,8 @@ export default function DiaryList() {
     }
   }, [data]);
 
-  if (isLoading) return <p>Loading</p>;
-  else if (isError) return <p>Error</p>;
-
+  if (isLoading) return <SimpleLoadingText />;
+  else if (isError) return <SimpleErrorText />;
   return (
     <MainLayout>
       <article className="p-10">
