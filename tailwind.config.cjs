@@ -6,6 +6,9 @@ module.exports = {
       colors: {
         primary: "#ff7979",
       },
+      fontFamily: {
+        diary: ["Gowun Dodum", "Dongle"],
+      },
     },
   },
   plugins: [],

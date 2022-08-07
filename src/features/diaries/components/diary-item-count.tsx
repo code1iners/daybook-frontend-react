@@ -3,20 +3,21 @@ import { DiaryItemCountProps } from "@/features/diaries/types";
 // When exist count value.
 const diaryItemCountContainerStyle =
   "w-full h-full flex justify-center items-center gap-2 child-text-hover";
-const diaryItemCountTextStyle = "text-sm text-white";
-const diaryItemIconStyle = "h-6 w-6 text-white";
+const diaryItemCountTextStyle = "text-sm ";
+const diaryItemIconStyle = "h-6 w-6";
 
 // When not exist count value.
-const diaryNoItemContainerStyle =
+const diaryItemNoContainerStyle =
   "child-text-hover h-full w-full flex justify-center items-center";
+const diaryItemNoIconStyle = "h-6 w-6 text-gray-400";
 
 export default function DiaryItemCount({ count }: DiaryItemCountProps) {
   if (!count)
     return (
-      <div className={diaryNoItemContainerStyle}>
+      <div className={diaryItemNoContainerStyle}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6"
+          className={diaryItemNoIconStyle}
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"

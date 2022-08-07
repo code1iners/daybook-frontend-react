@@ -9,7 +9,8 @@ export default function DiaryItem({ year, month, day, count }: DiaryItemProps) {
 
   const onDiaryClick = () => {
     const q = dateToQueryString({ year, month, day });
-    navigation(`${DiaryRoutes.Retrieve}?${q}`);
+    if (count) navigation(`${DiaryRoutes.Retrieve}?${q}`);
+    else navigation(`${DiaryRoutes.New}?${q}`);
   };
 
   return (

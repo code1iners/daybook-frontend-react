@@ -8,30 +8,36 @@ import SimpleLoadingText from "@/shared/components/simple-loading-text";
 import SimpleErrorText from "@/shared/components/simple-error-text";
 
 export default function DiaryList() {
-  // Need previous, next month data api.
-  const { data, isLoading, isError } = useDiaryList();
-  const [year, setYear] = useState<number>();
-  const [month, setMonth] = useState<number>();
+  const now = new Date();
+  const [year, setYear] = useState<number>(now.getFullYear());
+  const [month, setMonth] = useState<number>(now.getMonth() + 1);
   const [diaries, setDiaries] = useState<DiaryData[]>([]);
+  const { data, isLoading, isError } = useDiaryList({ year, month });
 
   useEffect(() => {
     if (data?.data) {
-      const { year, month, diaries } = data?.data;
-      setYear(year);
-      setMonth(month);
-      setDiaries(diaries);
+      console.log(year, month);
+      setDiaries(data.data.diaries);
     }
-  }, [data]);
+  }, [year, month, data]);
+
+  const onLeftClick = () => setMonth((curr) => curr - 1);
+  const onRightClick = () => setMonth((curr) => curr + 1);
 
   if (isLoading) return <SimpleLoadingText />;
   else if (isError) return <SimpleErrorText />;
   return (
     <MainLayout>
-      <article className="p-10">
-        <DiaryListHeader year={year} month={month} />
+      <article className="p-10 space-y-5">
+        <DiaryListHeader
+          year={year}
+          month={month}
+          onLeftClick={onLeftClick}
+          onRightClick={onRightClick}
+        />
 
         <section>
-          <ul className="mt-5 grid grid-cols-2 gap-2 md:grid-cols-7">
+          <ul className="grid grid-cols-2 gap-2 md:grid-cols-7">
             {diaries.map((diary, i) => (
               <DiaryItem
                 year={year}

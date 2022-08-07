@@ -8,4 +8,6 @@ export const dateToQueryString = ({ year, month, day }: DiaryItemProps) =>
     day: String(day).padStart(2, "0"),
   });
 
-export const queryStringToDate = (queryString: string) => qs.parse(queryString);
+export const queryStringToDate = <T>(
+  queryString: string
+): T | qs.ParsedQuery<string> => qs.parse(queryString);

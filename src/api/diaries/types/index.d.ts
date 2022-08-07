@@ -1,3 +1,4 @@
+import { CoreOutput } from "@/api/core/types/core-output";
 import { DiaryItemProps } from "@/features/diaries/types";
 
 export interface RetrieveDiaryByDateInput extends DiaryItemProps {}
@@ -8,6 +9,17 @@ export interface DiaryData {
   day: number;
 }
 
+export interface SimpleDate {
+  year: number;
+  month: number;
+  day: number;
+}
+
+export interface GetDiariesInput {
+  year: number;
+  month: number;
+}
+
 export interface GetDiariesOutput extends CoreOutput {
   data: {
     year: number;
@@ -15,3 +27,9 @@ export interface GetDiariesOutput extends CoreOutput {
     diaries: DiaryData[];
   };
 }
+
+export interface CreateDiaryInput extends SimpleDate {
+  content: string;
+}
+
+export interface CreateDiaryOutput extends CoreOutput {}

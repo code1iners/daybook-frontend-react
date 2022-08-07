@@ -4,7 +4,7 @@ interface SexyHorizontalButtonProps {
   classNames?: string;
   isFull?: boolean;
   children: JSX.Element;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 export default function SexyHorizontalButton({
@@ -16,7 +16,7 @@ export default function SexyHorizontalButton({
   return (
     <button
       className={clazz(
-        "border border-black rounded-md flex justify-center items-center p-2 transition-colors text-gray-600 hover:text-primary hover:border-primary",
+        "border rounded-md flex justify-center items-center p-2 transition-colors text-primary border-primary hover:text-white hover:bg-primary",
         isFull ? "w-full" : "",
         classNames ? classNames : ""
       )}

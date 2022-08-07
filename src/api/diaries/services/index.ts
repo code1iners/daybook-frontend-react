@@ -1,5 +1,8 @@
 import { axiosClient } from "@/api/core/axios";
 import {
+  CreateDiaryInput,
+  CreateDiaryOutput,
+  GetDiariesInput,
   GetDiariesOutput,
   RetrieveDiaryByDateInput,
   RetrieveDiaryByQueryStringInput,
@@ -10,9 +13,11 @@ import { DiaryRoutes } from "@/shared/constants/routes";
 /**
  * [GET /api/v1/diaries] Getting all diary list.
  */
-export const getDiaries = async () => {
+export const getDiaries = async (input: GetDiariesInput) => {
   return axiosClient
-    .get<GetDiariesOutput>(DiaryRoutes.Diaries)
+    .get<GetDiariesOutput>(DiaryRoutes.Diaries, {
+      params: { ...input },
+    })
     .then(({ data }) => data);
 };
 
@@ -29,7 +34,7 @@ export const retrieveDiaryByDate = async ({
     .then(({ data }) => data);
 
 /**
- * [GET /diaries/retrieve?q]
+ * [GET /api/v1/diaries/retrieve?q]
  */
 export const retrieveDiaryByQueryString = async (
   queryString: RetrieveDiaryByQueryStringInput
@@ -37,3 +42,11 @@ export const retrieveDiaryByQueryString = async (
   axiosClient
     .get(`${DiaryRoutes.Retrieve}${queryString}`)
     .then(({ data }) => data);
+
+/**
+ * [POST /api/v1/diaries]
+ */
+export const createDiary = async (
+  input: CreateDiaryInput
+): Promise<CreateDiaryOutput> =>
+  axiosClient.post(DiaryRoutes.Diaries, input).then(({ data }) => data);

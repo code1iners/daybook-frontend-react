@@ -29,7 +29,7 @@ export const diaryRetrieveRoute = (
 
 export const diaryNewRoute = (
   <Route
-    path={"${DiaryRoutes.New}"}
+    path={DiaryRoutes.New}
     element={
       <AuthRequired>
         <DiaryNew />

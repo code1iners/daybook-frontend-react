@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -25,5 +28,17 @@
   }
   .child-text-hover:hover > * {
     @apply text-primary;
+  }
+
+  .text-error {
+    @apply text-primary text-sm tracking-wider;
+  }
+
+  #diary-new-input-placeholder {
+    @apply absolute top-[32px] left-[32px] opacity-50 transition-all;
+  }
+  #diary-new-input.is-active + #diary-new-input-placeholder,
+  #diary-new-input:focus + #diary-new-input-placeholder {
+    @apply translate-x-[-12px] translate-y-[-24px] text-xs z-10 tracking-wider;
   }
 }
