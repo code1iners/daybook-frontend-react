@@ -4,12 +4,19 @@
 
 @layer components {
   .h-header {
-    @apply h-11 bg-black text-white text-xs font-thin;
+    @apply h-11 bg-black text-white text-xs font-thin fixed w-full top-0 left-0 z-50;
   }
   .h-header li {
     @apply h-full;
   }
   .h-header li a {
     @apply cursor-pointer transition-all opacity-90 hover:opacity-100 hover:font-normal min-w-[50px] h-full flex items-center justify-center capitalize;
+  }
+
+  .h-main {
+    @apply grow mt-11;
+  }
+  .h-main article {
+    @apply min-h-[calc(100vh-45px)];
   }
 }

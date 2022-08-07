@@ -6,16 +6,14 @@ import {
   OtherRoutes,
 } from "@/shared/constants/routes";
 import DiaryList from "@/pages/diaries/diary-list";
-import DiaryDetail from "@/pages/diaries/diary-detail";
+import DiaryDetail from "@/pages/diaries/diary-retrieve";
 import NotFound from "@/pages/errors/not-found";
 import Login from "@/pages/auth/login";
 import Home from "@/pages/home";
-<<<<<<< Updated upstream
-=======
 import { useScreenSize } from "@/shared/hooks/use-screen-size";
->>>>>>> Stashed changes
 
 function App() {
+  useScreenSize();
   return (
     <Routes>
       {/* Root */}
