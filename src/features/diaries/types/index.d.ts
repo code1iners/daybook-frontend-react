@@ -8,3 +8,7 @@ export interface DiaryItemProps {
 export interface DiaryItemCountProps {
   count?: number;
 }
+
+export interface NewDiaryForm {
+  content: string;
+}
