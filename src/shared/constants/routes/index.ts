@@ -7,6 +7,7 @@ export const AuthRoutes = {
 export const DiaryRoutes = {
   Diaries: `/diaries`,
   Retrieve: `/diaries/retrieve`,
+  New: `/diaries/new`,
 } as const;
 
 // User

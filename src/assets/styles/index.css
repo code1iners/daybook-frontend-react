@@ -19,4 +19,11 @@
   .h-main article {
     @apply min-h-[calc(100vh-45px)];
   }
+
+  .child-text-hover > * {
+    @apply transition-colors text-gray-500;
+  }
+  .child-text-hover:hover > * {
+    @apply text-primary;
+  }
 }

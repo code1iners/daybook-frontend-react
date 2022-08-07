@@ -1,56 +1,29 @@
-import { Routes, Route } from "react-router-dom";
-import AuthRequired from "@/features/auth/components/auth-required";
-import {
-  AuthRoutes,
-  DiaryRoutes,
-  OtherRoutes,
-} from "@/shared/constants/routes";
-import DiaryList from "@/pages/diaries/diary-list";
-import DiaryDetail from "@/pages/diaries/diary-retrieve";
-import NotFound from "@/pages/errors/not-found";
-import Login from "@/pages/auth/login";
-import Home from "@/pages/home";
+import { Routes } from "react-router-dom";
 import { useScreenSize } from "@/shared/hooks/use-screen-size";
+import { allRoute, rootRoute } from "@/routes/others";
+import { loginRoute } from "@/routes/auth";
+import {
+  diaryListRoute,
+  diaryRetrieveRoute,
+  diaryNewRoute,
+} from "@/routes/diaries";
 
-function App() {
+export default function App() {
   useScreenSize();
+
   return (
     <Routes>
-      {/* Root */}
-      <Route
-        path={OtherRoutes.Root}
-        element={
-          <AuthRequired>
-            <Home />
-          </AuthRequired>
-        }
-      ></Route>
-
       {/* Authenticate */}
-      <Route path={AuthRoutes.Login} element={<Login />}></Route>
+      {loginRoute}
 
       {/* Diary */}
-      <Route
-        path={DiaryRoutes.Diaries}
-        element={
-          <AuthRequired>
-            <DiaryList />
-          </AuthRequired>
-        }
-      ></Route>
-      <Route
-        path={`${DiaryRoutes.Diaries}/:id`}
-        element={
-          <AuthRequired>
-            <DiaryDetail />
-          </AuthRequired>
-        }
-      ></Route>
+      {diaryListRoute}
+      {diaryRetrieveRoute}
+      {diaryNewRoute}
 
-      {/* All */}
-      <Route path={OtherRoutes.All} element={<NotFound />}></Route>
+      {/* Others */}
+      {allRoute}
+      {rootRoute}
     </Routes>
   );
 }
-
-export default App;

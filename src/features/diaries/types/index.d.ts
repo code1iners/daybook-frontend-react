@@ -4,3 +4,7 @@ export interface DiaryItemProps {
   day?: number;
   count?: number;
 }
+
+export interface DiaryItemCountProps {
+  count?: number;
+}
