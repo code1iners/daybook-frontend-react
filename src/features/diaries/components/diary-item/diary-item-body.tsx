@@ -16,8 +16,8 @@ export default function DiaryItemBody({
   return (
     <section className="pt-5">
       <form className="space-y-5" onSubmit={onSubmit}>
-        <div className="flex flex-col space-y-3">
-          <div className="font-diary relative overflow-hidden">
+        <div className="flex flex-col space-y-3 ">
+          <div className="font-diary relative border rounded-md shadow-md overflow-hidden">
             {/* Inputs */}
             <textarea
               {...rest}
@@ -27,7 +27,7 @@ export default function DiaryItemBody({
               }}
               id="diary-new-input"
               className={clazz(
-                "w-full text-xl p-8 min-h-[300px] rounded-md outline-none resize-none tracking-[3px] shadow-md",
+                "w-full text-xl p-8 min-h-[300px] rounded-md outline-none resize-none tracking-[3px]",
                 hasLength() ? "is-active" : ""
               )}
               autoComplete="off"
@@ -35,6 +35,7 @@ export default function DiaryItemBody({
               required
             ></textarea>
 
+            {/* Placeholder */}
             <span
               id="diary-new-input-placeholder"
               className="absolute top-10 left-10 tracking-[3px] text-lg"
@@ -42,7 +43,7 @@ export default function DiaryItemBody({
             >
               Enter any story
             </span>
-
+            {/* Text length */}
             <span
               id="diary-new-text-length"
               className={clazz(
@@ -56,12 +57,12 @@ export default function DiaryItemBody({
 
           {/* Errors */}
           {errors.content?.message && (
-            <span className="text-error">{errors.content.message}</span>
+            <p className="text-error">{errors.content.message}</p>
           )}
           {errors.content?.type === "validate" && (
-            <span className="text-error">
+            <p className="text-error">
               Content is should be less than 200 digits.
-            </span>
+            </p>
           )}
         </div>
       </form>
