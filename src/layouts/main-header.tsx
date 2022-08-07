@@ -1,10 +1,10 @@
+import { Link } from "react-router-dom";
 import {
   AuthRoutes,
   DiaryRoutes,
   OtherRoutes,
   UserRoutes,
-} from "@/constants/routes";
-import { Link } from "react-router-dom";
+} from "@/shared/constants/routes";
 
 export default function MainHeader() {
   return (

@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { meAtom } from "@/stores/auth";
-import { AuthRoutes, DiaryRoutes } from "@/constants/routes";
+import { AuthRoutes, DiaryRoutes } from "@/shared/constants/routes";
 
 export default function Home() {
   const navigate = useNavigate();

@@ -1,7 +1,7 @@
 import { Navigate, useLocation } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { meAtom } from "@/stores/auth";
-import { AuthRoutes } from "@/constants/routes";
+import { AuthRoutes } from "@/shared/constants/routes";
 
 interface AuthRequiredProps {
   children: JSX.Element;

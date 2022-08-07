@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { DiaryRoutes } from "@/constants/routes";
+import { DiaryRoutes } from "@/shared/constants/routes";
 
 export default function NotFound() {
   const navigation = useNavigate();

@@ -1,11 +1,19 @@
 import { Routes, Route } from "react-router-dom";
 import AuthRequired from "@/features/auth/components/auth-required";
-import { AuthRoutes, DiaryRoutes, OtherRoutes } from "@/constants/routes";
+import {
+  AuthRoutes,
+  DiaryRoutes,
+  OtherRoutes,
+} from "@/shared/constants/routes";
 import DiaryList from "@/pages/diaries/diary-list";
 import DiaryDetail from "@/pages/diaries/diary-detail";
 import NotFound from "@/pages/errors/not-found";
 import Login from "@/pages/auth/login";
 import Home from "@/pages/home";
+<<<<<<< Updated upstream
+=======
+import { useScreenSize } from "@/shared/hooks/use-screen-size";
+>>>>>>> Stashed changes
 
 function App() {
   return (
