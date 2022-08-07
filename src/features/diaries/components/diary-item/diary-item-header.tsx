@@ -1,8 +1,5 @@
 import SexyHorizontalButton from "@/shared/components/sexy-horizontal-button";
-
-interface DiaryItemHeaderProps {
-  onClick: () => void;
-}
+import { DiaryItemHeaderProps } from "@/features/diaries/types";
 
 export default function DiaryItemHeader({ onClick }: DiaryItemHeaderProps) {
   return (

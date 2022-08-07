@@ -12,3 +12,18 @@ export interface DiaryItemCountProps {
 export interface NewDiaryForm {
   content: string;
 }
+
+export interface DiaryItemBodyProps {
+  onSubmit: () => void;
+  refCallBack: RefCallBack;
+  rest: Omit<UseFormRegisterReturn, "ref">;
+  inputRef: React.MutableRefObject<HTMLTextAreaElement | null>;
+  content?: string;
+  textLengthIsValid: () => boolean;
+  textLength: number;
+  errors: FieldErrorsImpl<DeepRequired<NewDiaryForm>>;
+}
+
+export interface DiaryItemHeaderProps {
+  onClick: () => void;
+}

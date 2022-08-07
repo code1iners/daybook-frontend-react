@@ -1,32 +1,15 @@
 import { clazz } from "@ce1pers/use-class";
-import type {
-  DeepRequired,
-  FieldErrorsImpl,
-  RefCallBack,
-  UseFormRegisterReturn,
-} from "react-hook-form";
-import { NewDiaryForm } from "@/features/diaries/types";
-
-interface DiaryItemBodyProps {
-  onSubmit: () => void;
-  refCallBack: RefCallBack;
-  rest: Omit<UseFormRegisterReturn, "ref">;
-  inputRef: React.MutableRefObject<HTMLTextAreaElement | null>;
-  content?: string;
-  textLengthIsValid: () => boolean;
-  textLength: number;
-  errors: FieldErrorsImpl<DeepRequired<NewDiaryForm>>;
-}
+import { DiaryItemBodyProps } from "@/features/diaries/types";
 
 export default function DiaryItemBody({
-  onSubmit,
   rest,
-  refCallBack,
   inputRef,
   content,
-  textLengthIsValid,
   textLength,
   errors,
+  onSubmit,
+  refCallBack,
+  textLengthIsValid,
 }: DiaryItemBodyProps) {
   const hasLength = () => content?.length;
 
