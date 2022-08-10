@@ -1,3 +1,5 @@
+import { RetrieveDiaryData } from "@/api/diaries/types";
+
 export interface DiaryItemProps {
   year?: number;
   month?: number;
@@ -25,5 +27,11 @@ export interface DiaryNewBodyProps {
 }
 
 export interface DiaryNewHeaderProps {
+  title: string;
+  buttonText: string;
   onClick: () => void;
+}
+
+export interface DiaryRetrieveItemProps {
+  diary: RetrieveDiaryData;
 }

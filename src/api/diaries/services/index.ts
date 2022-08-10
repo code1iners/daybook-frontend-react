@@ -4,8 +4,11 @@ import {
   CreateDiaryOutput,
   GetDiariesInput,
   GetDiariesOutput,
+  GetDiaryInput,
+  GetDiaryOutput,
   RetrieveDiaryByDateInput,
   RetrieveDiaryByQueryStringInput,
+  RetrieveDiaryOutput,
   DeleteDiaryInput,
   DeleteDiaryOutput,
   EditDiaryInput,
@@ -22,6 +25,14 @@ export const getDiaries = async (input: GetDiariesInput) =>
     .get<GetDiariesOutput>(DiaryRoutes.Diaries, {
       params: { ...input },
     })
+    .then(({ data }) => data);
+
+/**
+ * [GET /api/v1/diaries/:diaryId] Getting specific diary item.
+ */
+export const getDiary = async ({ diaryId }: GetDiaryInput) =>
+  axiosClient
+    .get<GetDiaryOutput>(`${DiaryRoutes.Diaries}/${diaryId}`)
     .then(({ data }) => data);
 
 /**
@@ -43,7 +54,7 @@ export const retrieveDiaryByQueryString = async (
   queryString: RetrieveDiaryByQueryStringInput
 ) =>
   axiosClient
-    .get(`${DiaryRoutes.Retrieve}${queryString}`)
+    .get<RetrieveDiaryOutput>(`${DiaryRoutes.Retrieve}${queryString}`)
     .then(({ data }) => data);
 
 /**

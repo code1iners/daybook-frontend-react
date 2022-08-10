@@ -1,23 +1,24 @@
 // Authenticate
 export const AuthRoutes = {
-  Login: `/login`,
+  Login: "/login",
 } as const;
 
 // Diary.
 export const DiaryRoutes = {
-  Diaries: `/diaries`,
-  Retrieve: `/diaries/retrieve`,
-  New: `/diaries/new`,
+  Diaries: "/diaries",
+  Retrieve: "/diaries/retrieve",
+  New: "/diaries/new",
+  Edit: "/diaries/edit",
 } as const;
 
 // User
 export const UserRoutes = {
-  Me: `/me`,
+  Me: "/me",
 } as const;
 
 // Others
 export const OtherRoutes = {
-  Root: `/`,
-  Settings: `/settings`,
+  Root: "/",
+  Settings: "/settings",
   All: "*",
 } as const;

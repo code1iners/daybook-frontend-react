@@ -4,7 +4,7 @@ export default function SimpleErrorText() {
   return (
     <MainLayout>
       <article className="h-full flex justify-center items-center">
-        <section className="flex flex-col items-center space-y-2">
+        <section className="flex flex-col items-center space-y-3">
           <div className="flex items-center gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +22,11 @@ export default function SimpleErrorText() {
             </svg>
             <h1 className="text-3xl">Sorry..</h1>
           </div>
-          <h2 className="text-xl">Please wait a seconds..</h2>
+          <h2 className="text-xl text-center opacity-60">
+            Service is unstable,
+            <br />
+            Please try again later.
+          </h2>
         </section>
       </article>
     </MainLayout>

@@ -4,6 +4,7 @@ import DiaryNew from "@/pages/diaries/diary-new";
 import DiaryRetrieve from "@/pages/diaries/diary-retrieve";
 import AuthRequired from "@/features/auth/components/auth-required";
 import { DiaryRoutes } from "@/shared/constants/routes";
+import DiaryEdit from "@/pages/diaries/diary-edit";
 
 export const diaryListRoute = (
   <Route
@@ -33,6 +34,17 @@ export const diaryNewRoute = (
     element={
       <AuthRequired>
         <DiaryNew />
+      </AuthRequired>
+    }
+  />
+);
+
+export const diaryEditRoute = (
+  <Route
+    path={DiaryRoutes.Edit}
+    element={
+      <AuthRequired>
+        <DiaryEdit />
       </AuthRequired>
     }
   />

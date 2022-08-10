@@ -1,58 +1,38 @@
 import { useEffect, useRef, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { useMutation } from "@tanstack/react-query";
+import { useLocation } from "react-router-dom";
+import { parse } from "query-string";
 import MainLayout from "@/layouts/main-layout";
-import { createDiary } from "@/api/diaries/services";
-import { SimpleDate } from "@/api/diaries/types";
-import { NewDiaryForm } from "@/features/diaries/types";
 import DiaryItemHeader from "@/features/diaries/components/diary-new/diary-new-header";
 import DiaryItemBody from "@/features/diaries/components/diary-new/diary-new-body";
+import { NewDiaryForm } from "@/features/diaries/types";
 import { extractTextLength } from "@/shared/libs/useString";
-import {
-  dateToQueryString,
-  queryStringToDate,
-} from "@/shared/utils/date.utils";
+import { useDiaryDetail } from "@/features/diaries/hooks/useDiary";
+import { GetDiaryInput } from "@/api/diaries/types";
 import SimpleLoadingText from "@/shared/components/simple-loading-text";
-import { DiaryRoutes } from "@/shared/constants/routes";
+import SimpleErrorText from "@/shared/components/simple-error-text";
 
 const MAX_LENGTH = 100;
 
-export default function DiaryNew() {
+export default function DiaryEdit() {
   const inputRef = useRef<HTMLTextAreaElement | null>(null);
   const [textLength, setTextLength] = useState(0);
   const { search } = useLocation();
+  const diaryId: GetDiaryInput = parse(search) as any;
+  const { data, isLoading, isError } = useDiaryDetail(diaryId);
+  console.log(data);
+
+  if (isLoading) return <SimpleLoadingText />;
+  if (isError) return <SimpleErrorText />;
+
   const {
     register,
     handleSubmit,
-    formState: { errors },
     watch,
+    formState: { errors },
   } = useForm<NewDiaryForm>();
 
-  const {
-    mutate,
-    data,
-    error,
-    isSuccess: isCreateSuccess,
-    isError: isCreateError,
-    isLoading: isCreateLoading,
-  } = useMutation(createDiary);
-
-  const navigator = useNavigate();
-
-  useEffect(() => {
-    if (isCreateError) {
-      console.error(error);
-    } else if (isCreateSuccess && data) {
-      const date = queryStringToDate(search) as SimpleDate;
-      alert(data.message);
-
-      navigator({
-        pathname: DiaryRoutes.Retrieve,
-        search: `?${dateToQueryString(date)}`,
-      });
-    }
-  }, [isCreateSuccess, isCreateError, data]);
+  const onValid = () => {};
 
   const textLengthIsValid = () =>
     extractTextLength(watch("content")) <= MAX_LENGTH;
@@ -66,25 +46,13 @@ export default function DiaryNew() {
     validate: textLengthIsValid,
   });
 
-  useEffect(
-    () => setTextLength(extractTextLength(watch("content"))),
-    [watch("content")]
-  );
-
-  const onValid = async ({ content }: NewDiaryForm) => {
-    const date = queryStringToDate(search) as SimpleDate;
-    mutate({ ...date, content });
-  };
-
-  if (isCreateLoading) return <SimpleLoadingText />;
-
   return (
     <MainLayout>
       <article className="p-10 space-y-5 divide-y">
         {/* Header */}
         <DiaryItemHeader
-          title="New Diary"
-          buttonText="Write"
+          title="Edit Diary"
+          buttonText="Modify"
           onClick={handleSubmit(onValid)}
         />
 

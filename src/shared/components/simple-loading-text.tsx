@@ -5,7 +5,9 @@ export default function SimpleLoadingText({ text }: SimpleLoadingTextProps) {
   return (
     <MainLayout>
       <article className="flex justify-center items-center">
-        <span>{text ? text : "Loading.."}</span>
+        <span className="text-2xl tracking-wider">
+          {text ? text : "Loading.."}
+        </span>
       </article>
     </MainLayout>
   );
