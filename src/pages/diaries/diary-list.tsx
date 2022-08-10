@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import MainLayout from "@/layouts/main-layout";
 import { DiaryData } from "@/api/diaries/types";
-import DiaryItem from "@/features/diaries/components/diary-item";
+import DiaryItem from "@/features/diaries/components/diary-calendar-item";
 import { useDiaryList } from "@/features/diaries/hooks/useDiary";
 import DiaryListHeader from "@/features/diaries/components/diary-list-header";
 import SimpleLoadingText from "@/shared/components/simple-loading-text";
@@ -15,10 +15,7 @@ export default function DiaryList() {
   const { data, isLoading, isError } = useDiaryList({ year, month });
 
   useEffect(() => {
-    if (data?.data) {
-      console.log(year, month);
-      setDiaries(data.data.diaries);
-    }
+    if (data?.data) setDiaries(data.data.diaries);
   }, [year, month, data]);
 
   const onLeftClick = () => setMonth((curr) => curr - 1);
@@ -36,8 +33,8 @@ export default function DiaryList() {
           onRightClick={onRightClick}
         />
 
-        <section>
-          <ul className="grid grid-cols-2 gap-2 md:grid-cols-7">
+        <section className="pb-10">
+          <ul className="grid grid-cols-2 gap-2 md:grid-cols-7;">
             {diaries.map((diary, i) => (
               <DiaryItem
                 year={year}

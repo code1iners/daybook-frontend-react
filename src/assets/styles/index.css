@@ -20,7 +20,7 @@
     @apply grow before:content-[''] before:block before:h-11 before:w-full before:opacity-0;
   }
   .h-main article {
-    @apply min-h-[calc(100vh-45px)];
+    @apply h-[calc(100vh-45px)];
   }
 
   .child-text-hover > * {
@@ -32,6 +32,14 @@
 
   .text-error {
     @apply text-primary text-sm tracking-wider;
+  }
+
+  .hover-scale {
+    @apply transition hover:scale-105;
+  }
+
+  .hover-scale-color {
+    @apply transition hover:scale-110 hover:text-primary;
   }
 
   #diary-new-input-placeholder {

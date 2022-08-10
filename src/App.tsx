@@ -6,6 +6,7 @@ import {
   diaryListRoute,
   diaryRetrieveRoute,
   diaryNewRoute,
+  diaryEditRoute,
 } from "@/routes/diaries";
 
 export default function App() {
@@ -20,6 +21,7 @@ export default function App() {
       {diaryListRoute}
       {diaryRetrieveRoute}
       {diaryNewRoute}
+      {diaryEditRoute}
 
       {/* Others */}
       {allRoute}

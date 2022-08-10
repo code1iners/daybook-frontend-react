@@ -20,6 +20,14 @@ export interface GetDiariesInput {
   month: number;
 }
 
+export interface GetDiaryInput {
+  diaryId: number;
+}
+
+export interface GetDiaryOutput extends CoreOutput {
+  data: RetrieveDiaryData;
+}
+
 export interface GetDiariesOutput extends CoreOutput {
   data: {
     year: number;
@@ -46,3 +54,16 @@ export interface EditDiaryInput {
 }
 
 export interface EditDiaryOutput extends CoreOutput {}
+
+export interface RetrieveDiaryData {
+  content: string;
+  day: string;
+  diaryId: number;
+  month: string;
+  registerDate: string;
+  userId: number;
+  year: string;
+}
+export interface RetrieveDiaryOutput extends CoreOutput {
+  data: RetrieveDiaryData[];
+}
