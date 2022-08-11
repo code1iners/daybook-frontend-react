@@ -7,6 +7,7 @@ import SexyButton from "@/components/sexy-horizontal-button";
 export default function Login() {
   const {
     register,
+    getValues,
     handleSubmit,
     formState: { errors },
   } = useForm();
@@ -36,37 +37,67 @@ export default function Login() {
               id="email"
               name="email"
               {...register("email", {
-                required: "Required",
+                required: "이메일은 필수 입력입니다",
                 pattern: {
                   value: /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/,
-                  message: "email address",
+                  message: "이메일 형식에 맞지 않습니다",
                 },
               })}
               type="text"
             />
           </li>
+          {errors.email && <small role="alert">{errors.email.message}</small>}
           <li>
             <label>패스워드</label>
             <input
+              id="pw"
+              name="pw"
               {...register("pw", {
-                required: "Required",
-                pattern: {
-                  message: "pw2 address",
+                required: "패스워드는 필수값 입니다",
+                minLength: {
+                  value: 8,
+                  message: "8자리 이상 비밀번호를 사용하세요.",
                 },
               })}
               type="password"
             />
           </li>
+          {errors.pw && <small role="alert">{errors.pw.message}</small>}
           <li>
             <label>패스워드 확인</label>
-            <input {...register("pw2")} type="password" />
+            <input
+              id="pw2"
+              name="pw2"
+              {...register("pw2", {
+                required: "패스워드를 입력 바랍니다",
+                validate: {
+                  matchPassword: (value) => {
+                    const { pw } = getValues();
+                    console.log("p2===>", pw);
+                    console.log("value===>", value);
+                    return pw === value || "비밀번호가 일치하지 않습니다";
+                  },
+                },
+              })}
+              type="password"
+            />
           </li>
+          {errors.pw2 && <small role="alert">{errors.pw2.message}</small>}
           <li>
             <label>닉네임</label>
-            <input {...register("name")} type="text" />
+            <input
+              {...register("name", {
+                required: "닉네임을 입력 바랍니다",
+                minLength: {
+                  value: 2,
+                  message: "2자리 이상 비밀번호를 사용하세요.",
+                },
+              })}
+              type="text"
+            />
           </li>
+          {errors.name && <small role="alert">{errors.name.message}</small>}
         </ul>
-        {/* <p>{errors.email.message}</p> */}
         <SexyButton />
       </form>
     </MainBody>
