@@ -1,6 +1,7 @@
 // Authenticate
 export const AuthRoutes = {
-  Login: "/login",
+  Join: `/join`,
+  Login: `/login`,
 } as const;
 
 // Diary.

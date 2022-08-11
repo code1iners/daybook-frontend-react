@@ -28,7 +28,7 @@ export default function MainHeader() {
               <Link to={DiaryRoutes.Diaries}>diary</Link>
             </li>
             <li>
-              <Link to={AuthRoutes.Login}>login</Link>
+              <Link to={AuthRoutes.Join}>login</Link>
             </li>
             <li>
               <Link to={UserRoutes.Me}>me</Link>

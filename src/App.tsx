@@ -1,7 +1,7 @@
 import { Routes } from "react-router-dom";
 import { useScreenSize } from "@/shared/hooks/use-screen-size";
 import { allRoute, rootRoute } from "@/routes/others";
-import { loginRoute } from "@/routes/auth";
+import { joinRoute } from "@/routes/auth";
 import {
   diaryListRoute,
   diaryRetrieveRoute,
@@ -15,7 +15,7 @@ export default function App() {
   return (
     <Routes>
       {/* Authenticate */}
-      {loginRoute}
+      {joinRoute}
 
       {/* Diary */}
       {diaryListRoute}
