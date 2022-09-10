@@ -15,7 +15,7 @@ export default function DiaryItem({ year, month, day, count }: DiaryItemProps) {
 
   return (
     <li
-      className="border rounded-md h-44 cursor-pointer flex flex-col transition-transform hover:scale-105 shadow-md"
+      className="border rounded-md h-44 cursor-pointer flex flex-col transition-transform hover:scale-105 shadow-md bg-white"
       key={day}
       onClick={onDiaryClick}
     >

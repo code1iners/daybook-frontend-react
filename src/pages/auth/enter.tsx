@@ -1,12 +1,12 @@
-import JoinForm from "@/features/auth/components/join-form";
 import AuthLayout from "@/layouts/auth-layout";
 import MainLayout from "@/layouts/main-layout";
+import LoginForm from "@/features/auth/components/login-form";
 
-export default function Join() {
+export default function Enter() {
   return (
     <MainLayout>
       <AuthLayout>
-        <JoinForm />
+        <LoginForm />
       </AuthLayout>
     </MainLayout>
   );

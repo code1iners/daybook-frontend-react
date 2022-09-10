@@ -5,8 +5,12 @@ import {
   OtherRoutes,
   UserRoutes,
 } from "@/shared/constants/routes";
+import { useRecoilValue } from "recoil";
+import { meAtom } from "@/stores/auth";
 
 export default function MainHeader() {
+  const { isLoggedIn } = useRecoilValue(meAtom);
+
   return (
     <>
       <header className="h-header">
@@ -24,18 +28,28 @@ export default function MainHeader() {
                 </svg>
               </Link>
             </li>
-            <li>
-              <Link to={DiaryRoutes.Diaries}>diary</Link>
-            </li>
-            <li>
-              <Link to={AuthRoutes.Join}>login</Link>
-            </li>
-            <li>
-              <Link to={UserRoutes.Me}>me</Link>
-            </li>
-            <li>
-              <Link to={OtherRoutes.Settings}>settings</Link>
-            </li>
+            {isLoggedIn ? (
+              <>
+                <li>
+                  <Link to={DiaryRoutes.Diaries}>diary</Link>
+                </li>
+                <li>
+                  <Link to={UserRoutes.Me}>me</Link>
+                </li>
+                <li>
+                  <Link to={OtherRoutes.Settings}>settings</Link>
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  <Link to={AuthRoutes.Login}>login</Link>
+                </li>
+                <li>
+                  <Link to={AuthRoutes.Join}>join</Link>
+                </li>
+              </>
+            )}
           </ul>
         </nav>
       </header>

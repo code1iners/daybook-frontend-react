@@ -19,7 +19,8 @@
   .h-main {
     @apply grow before:content-[''] before:block before:h-11 before:w-full before:opacity-0;
   }
-  .h-main article {
+  .h-main > section:first-child,
+  .h-main > article:first-child {
     @apply h-[calc(100vh-45px)];
   }
 

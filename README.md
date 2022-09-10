@@ -44,19 +44,17 @@ npm run build
 
 - Authenticate
 
-  - [ ] Sign up.
-  - [ ] Sign in.
+  - [x] Sign up.
+  - [x] Sign in.
   - [ ] Sign out.
 
 - Diary
 
-  - [ ] List.
+  - [x] List.
   - [ ] Detail.
-  - [ ] Write.
+  - [x] Write.
   - [ ] Update.
   - [ ] Delete.
 
 - Others
-  - [ ] Dark mode
-  - [ ] Form validation
-  - [ ] Animation
+  - [ ] Dark mode.

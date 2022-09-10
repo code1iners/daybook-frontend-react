@@ -1,4 +1,4 @@
 export interface CoreOutput {
   code: number;
-  message: string;
+  message: string | null;
 }

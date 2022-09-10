@@ -20,12 +20,18 @@ import { DiaryRoutes } from "@/shared/constants/routes";
 /**
  * [GET /api/v1/diaries] Getting all diary list.
  */
-export const getDiaries = async (input: GetDiariesInput) =>
-  axiosClient
+export const getDiaries = async ({ year, month }: GetDiariesInput) => {
+  const parsedMonth = String(month).padStart(2, "0");
+
+  return axiosClient
     .get<GetDiariesOutput>(DiaryRoutes.Diaries, {
-      params: { ...input },
+      params: {
+        year,
+        month: parsedMonth,
+      },
     })
     .then(({ data }) => data);
+};
 
 /**
  * [GET /api/v1/diaries/:diaryId] Getting specific diary item.

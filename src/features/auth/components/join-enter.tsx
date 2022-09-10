@@ -1,11 +1,26 @@
-import { motion } from "framer-motion";
+import { motion, useAnimationControls } from "framer-motion";
 import {
   textParentVariants,
   textChildVariants,
   buttonChildVariants,
 } from "@/features/auth/variants/join-enter-variants";
+import { useForm } from "react-hook-form";
+import { useState } from "react";
+
+const containerVariants = {};
 
 export default function JoinEnter() {
+  const containerControls = useAnimationControls();
+
+  const onContinueClick = () => {
+    containerControls.start({
+      x: -window.innerWidth,
+      transition: {
+        duration: 1,
+      },
+    });
+  };
+
   return (
     <article className="h-full max-w-lg mx-auto flex flex-col items-center justify-around text-white p-5">
       <motion.section
@@ -36,6 +51,7 @@ export default function JoinEnter() {
           whileHover="hover"
           whileTap="tap"
           className="py-3 bg-white text-primary rounded-full tracking-wider"
+          onClick={onContinueClick}
         >
           Continue
         </motion.button>
