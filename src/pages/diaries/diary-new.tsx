@@ -12,7 +12,7 @@ import { extractTextLength } from "@/shared/libs/useString";
 import {
   dateToQueryString,
   queryStringToDate,
-} from "@/shared/utils/date.utils";
+} from "@/shared/utils/date-helpers";
 import SimpleLoadingText from "@/shared/components/simple-loading-text";
 import { DiaryRoutes } from "@/shared/constants/routes";
 

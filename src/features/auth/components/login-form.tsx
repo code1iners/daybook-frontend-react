@@ -31,14 +31,12 @@ export default function LoginForm() {
       const trimmedEmail = email.trim();
       const trimmedPassword = password.trim();
 
-      console.log(trimmedEmail, trimmedPassword);
       // Check the email is valid.
       const {
         code: checkCode,
         data: checkData,
         message: checkMessage,
       } = await checkUserEmail({ email: trimmedEmail });
-      console.log(checkCode, checkData, checkMessage);
 
       if (checkCode !== 200 || !checkData) {
         alert(checkMessage);

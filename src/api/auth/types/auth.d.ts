@@ -8,9 +8,9 @@ export interface CheckUserEmailOutput extends CoreOutput {
 }
 
 export interface JoinUserInput {
-  userEmail: string;
+  email: string;
   password: string;
-  userName: string;
+  name: string;
   birthday: string;
 }
 

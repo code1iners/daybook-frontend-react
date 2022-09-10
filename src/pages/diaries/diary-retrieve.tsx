@@ -2,7 +2,6 @@ import { useLocation } from "react-router-dom";
 import { AxiosError } from "axios";
 import MainLayout from "@/layouts/main-layout";
 import { useDiaryRetrieve } from "@/features/diaries/hooks/useDiary";
-import { queryStringToDate } from "@/shared/utils/date.utils";
 import DiaryRetrieveItem from "@/features/diaries/components/diary-retrieve-item";
 
 export default function DiaryRetrieve() {

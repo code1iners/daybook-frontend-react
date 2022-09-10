@@ -14,7 +14,7 @@ import {
   EditDiaryInput,
   EditDiaryOutput,
 } from "@/api/diaries/types";
-import { dateToQueryString } from "@/shared/utils/date.utils";
+import { dateToQueryString } from "@/shared/utils/date-helpers";
 import { DiaryRoutes } from "@/shared/constants/routes";
 
 /**

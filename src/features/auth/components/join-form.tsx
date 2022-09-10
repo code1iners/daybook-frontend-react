@@ -39,8 +39,8 @@ export default function JoinForm() {
 
       // Join a new user.
       const { code, message } = await joinUser({
-        userEmail: trimmedEmail,
-        userName: trimmedName,
+        email: trimmedEmail,
+        name: trimmedName,
         password: trimmedPassword,
         birthday,
       });

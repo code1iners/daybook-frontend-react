@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { DiaryItemProps } from "@/features/diaries/types";
 import { DiaryRoutes } from "@/shared/constants/routes";
-import { dateToQueryString } from "@/shared/utils/date.utils";
+import { dateToQueryString } from "@/shared/utils/date-helpers";
 import DiaryItemCount from "@/features/diaries/components/diary-calendar-item/diary-calendar-item-count";
 
 export default function DiaryItem({ year, month, day, count }: DiaryItemProps) {

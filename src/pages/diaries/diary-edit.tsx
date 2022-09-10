@@ -20,7 +20,6 @@ export default function DiaryEdit() {
   const { search } = useLocation();
   const diaryId: GetDiaryInput = parse(search) as any;
   const { data, isLoading, isError } = useDiaryDetail(diaryId);
-  console.log(data);
 
   if (isLoading) return <SimpleLoadingText />;
   if (isError) return <SimpleErrorText />;
