@@ -34,7 +34,7 @@ export default function DiaryList() {
         />
 
         <section className="pb-10">
-          <ul className="grid grid-cols-2 gap-2 md:grid-cols-7;">
+          <ul className="grid grid-cols-2 gap-2 md:grid-cols-7">
             {diaries.map((diary, i) => (
               <DiaryItem
                 year={year}
